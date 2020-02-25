@@ -1,21 +1,21 @@
 import React from 'react';
 import * as Ui from './styles';
+import Product from '../Product';
 
 export default function ListProducts({ products }) {
-  console.log('prod', products);
-
   return (
     <Ui.Container>
       <Ui.List>
-        {products.map(({ thumbnail, title, address, price }) => (
-          <Ui.Product image={thumbnail}>
-            <div className="image" />
-            <div className="info">
-              <h2>R$ {price}</h2>
-              <span>{address.state_name}</span>
-              <p>{title}</p>
-            </div>
-          </Ui.Product>
+        {products.map(({ thumbnail, title, address, price, shipping, id }) => (
+          <Product
+            thumbnail={thumbnail}
+            title={title}
+            address={address}
+            price={price}
+            shipping={shipping.free_shipping}
+            key={id}
+            id={id}
+          />
         ))}
       </Ui.List>
     </Ui.Container>

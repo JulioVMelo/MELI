@@ -5,7 +5,7 @@ import Search from '../../assets/images/search.png';
 import api from '../../services/api';
 
 export default function Header({ handleSetProducts }) {
-  const [query, setQuery] = useState('macbook');
+  const [query, setQuery] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();

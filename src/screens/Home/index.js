@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Header handleSetProducts={setProducts} />
-      <ListProducts products={products} />
+      {products.length > 0 && <ListProducts products={products} />}
     </>
   );
 }
