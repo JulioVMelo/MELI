@@ -18,11 +18,13 @@ export const Product = styled.div`
 
     .image {
       flex-grow: 1;
+      margin-bottom: 20px;
     }
 
     .detail {
       max-width: 333px;
       min-width: 333px;
+
       span {
         font-size: 1.4rem;
         color: #999;

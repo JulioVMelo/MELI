@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as Ui from './styles';
 import Product from '../Product';
 
@@ -21,3 +22,20 @@ export default function ListProducts({ products }) {
     </Ui.Container>
   );
 }
+
+ListProducts.propTypes = {
+  products: PropTypes.shape({
+    thumbnail: PropTypes.string,
+    title: PropTypes.string,
+    address: PropTypes.string,
+    price: PropTypes.string,
+    shipping: PropTypes.shape({
+      free_shipping: PropTypes.string,
+    }),
+    id: PropTypes.string,
+  }),
+};
+
+ListProducts.defaultProps = {
+  products: [],
+};

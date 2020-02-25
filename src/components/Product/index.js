@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as Ui from './styles';
 import Transport from '../../assets/images/transport.png';
 
@@ -33,3 +34,19 @@ export default function Product({
     </Ui.Product>
   );
 }
+
+Product.propTypes = {
+  thumbnail: PropTypes.string,
+  price: PropTypes.string,
+  shipping: PropTypes.string,
+  address: PropTypes.shape({
+    state_name: PropTypes.string,
+  }),
+};
+
+Product.defaultProps = {
+  thumbnail: '',
+  price: '',
+  shipping: '',
+  address: {},
+};

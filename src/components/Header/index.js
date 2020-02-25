@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as Ui from './styles';
 import Logo from '../../assets/images/Logo.png';
 import Search from '../../assets/images/search.png';
@@ -19,9 +21,9 @@ export default function Header({ handleSetProducts }) {
   return (
     <Ui.Container>
       <div className="content">
-        <div className="logo">
+        <Link className="logo" to="/">
           <img src={Logo} alt="Mercado livre" />
-        </div>
+        </Link>
         <Ui.Search onSubmit={e => handleSubmit(e)}>
           <input
             type="text"
@@ -37,3 +39,11 @@ export default function Header({ handleSetProducts }) {
     </Ui.Container>
   );
 }
+
+Header.propTypes = {
+  handleSetProducts: PropTypes.func,
+};
+
+Header.defaultProps = {
+  handleSetProducts: () => {},
+};

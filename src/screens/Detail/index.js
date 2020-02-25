@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import api from '../../services/api';
 import * as Ui from './styles';
 import Header from '../../components/Header';
@@ -46,7 +46,7 @@ export default function Detail() {
               </div>
               <div className="detail">
                 <span>
-                  {product.condition} - {product.sold_quantity} vendido
+                  {product.condition} - {product.sold_quantity} vendido(s)
                 </span>
                 <h2>{product.title}</h2>
                 <h1>R$ {product.price}</h1>
