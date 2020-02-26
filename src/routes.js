@@ -7,6 +7,7 @@ export default function Routes() {
   return (
     <Switch>
       <Route path="/" exact component={Home} />
+      <Route path="/search/:query" exact component={Home} />
       <Route path="/item/:id" exact component={Detail} />
     </Switch>
   );

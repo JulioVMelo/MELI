@@ -1,25 +1,17 @@
-import React, { useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import * as Ui from './styles';
 import Logo from '../../assets/images/Logo.png';
 import Search from '../../assets/images/search.png';
-import api from '../../services/api';
 
-export default function Header({ handleSetProducts }) {
+export default function Header() {
   const [query, setQuery] = useState('');
+  const history = useHistory();
 
-  const handleSubmit = useCallback(
-    e => {
-      e.preventDefault();
-      if (query) {
-        api
-          .get(`/search?q=${query}&limit=4`)
-          .then(res => handleSetProducts(res.data.results));
-      }
-    },
-    [handleSetProducts, query]
-  );
+  const handleSubmit = e => {
+    e.preventDefault();
+    history.push(`/search/${query}`);
+  };
 
   return (
     <Ui.Container>
@@ -42,11 +34,3 @@ export default function Header({ handleSetProducts }) {
     </Ui.Container>
   );
 }
-
-Header.propTypes = {
-  handleSetProducts: PropTypes.func,
-};
-
-Header.defaultProps = {
-  handleSetProducts: () => {},
-};

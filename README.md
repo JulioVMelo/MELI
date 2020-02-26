@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Banana](https://logodownload.org/wp-content/uploads/2016/08/Mercado-Livre-logo.png)
 
-## Available Scripts
+## Libs (Produção e Desenvolvimento)
 
-In the project directory, you can run:
+1. React.JS
+1. React Router Dom
+1. Styled Components
+1. EsLint
+1. Prettier
 
-### `yarn start`
+## Considerações
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Como fiz apenas o front-end, busquei bastante na documentação da api do mercado livre, para atender os requisitos desejados.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. Com um pouco mais de tempo, faria a conversão da moeda de acordo com o site_id ao invés de deixar fixa em R\$, também não demoraria para fazer um componente de produtos relacionados, e uma galeria de imagens;
 
-### `yarn test`
+1. Apesar de gostar do redux, a aplicação não tinha necessidade de aplicar essa arquitetura (Projetos com Redux no fim do readme);
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Inspecionei a aplicação e não houve necessidade de melhorar a performance, já que so exibe 4 produtos, caso fosse um scroll infinito, eu faria isso virtualizando os dados;
 
-### `yarn build`
+1. tentei seguir o máximo o que estava na especificação do pdf, outros dados retirei do próprio mercado livre;
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Iniciando
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Baixe as dependências utilizando o comando a seguir
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```shell
+  yarn
+```
 
-### `yarn eject`
+Inicie a aplicação utilizando o comando a seguir
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell
+  yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deploy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Não realizei o deploy, pois tive problemas com as rotas no netlify, é necessário fazer algumas configurações, para que o roteamento fique por conta da aplicação e não do servidor;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Outros Projetos
 
-## Learn More
+Um lista de projetos desenvolvidos apenas por estudo ou diversão.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1.[Task App](https://task-minimal.netlify.com/) : controle de atividades do dia;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. [Best Sellers NYT](https://bestsellers.netlify.com/): Consumo da api do New York Times;
+3. [VUTTR](https://github.com/JulioVMelo/vuttr) : Projeto para salvar libs que gostei e pretendo usar em algum momento (Desenvolvido com redux e sagas);
+4. [Loja Mobile](https://github.com/JulioVMelo/RocketShoesMobile) : App desenvolvido com react native, redux e sagas;
+5. [Clone do gmail](https://github.com/JulioVMelo/clone-gmail): apenas uma brincadeira, na época estava estudando flexbox;
+6. [Clone do Twitter](https://github.com/JulioVMelo/clone-gmail): apenas diversão;
 
-### Code Splitting
+## Empresa
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Projetos desenvolvidos em produção
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. [PWA Institucional](https://www.alfagroup.tech/): utilizando Gatsby + GraphQL;
+1. [PWA institucional 2](https://www.alfainteligencia.com.br/): utilizando Gatsby + GraphQL;
+1. [Style guide de desenvolvimento CSS](http://styleguide.sogo.com.br/docs/css/): Como tech lead criei um projeto utilizando o Docusaurus para ajudar os novos funcionários a seguirem os padrões de desenvolvimento com CSS;
+1. Mais 80 órgãos governamentais utilizando um thema wordpress que criei seguindo as regras do Tribunal de contas;
+1. Nesse momento possuo 2 dashboards em desenvolvimento, infográficos utilizando a biblioteca Recharts (d3);
+1. [Design de app](https://prototipotensai.netlify.com/): (NÃO SOU DESIGN, não tenho essa competência) Feito por conta de uma necessidade da empresa;
