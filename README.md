@@ -1,4 +1,4 @@
-![Banana](https://logodownload.org/wp-content/uploads/2016/08/Mercado-Livre-logo.png)
+![MELI](https://logodownload.org/wp-content/uploads/2016/08/Mercado-Livre-logo.png)
 
 ## Libs (Produção e Desenvolvimento)
 
