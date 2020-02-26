@@ -54,6 +54,30 @@ export const Product = styled.div`
         cursor: pointer;
       }
     }
+
+    @media (max-width: 850px) {
+      flex-direction: column;
+      align-items: center;
+
+      .detail {
+        order: 1;
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .image {
+        order: 2;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 372px) {
+      padding: 0 20px;
+      overflow: hidden;
+      .detail {
+        min-width: initial;
+      }
+    }
   }
 
   .description {
@@ -68,6 +92,10 @@ export const Product = styled.div`
     p {
       font-size: 1.6rem;
       color: #999;
+    }
+
+    @media (max-width: 850px) {
+      margin-left: 0;
     }
   }
 `;

@@ -16,6 +16,7 @@ export const Product = styled.div`
     background-position: center center;
     margin-right: 16px;
   }
+
   .info {
     display: flex;
     flex-direction: column;
@@ -24,11 +25,13 @@ export const Product = styled.div`
     .price {
       display: flex;
       align-items: center;
+
       h2 {
         font-size: 2rem;
         font-weight: 300;
         color: #333;
       }
+
       img {
         margin-left: 10px;
         width: 20px;
@@ -45,6 +48,25 @@ export const Product = styled.div`
       align-self: flex-end;
       color: #999;
       margin-bottom: 32px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+
+    .info {
+      .price {
+        justify-content: center;
+      }
+
+      span {
+        align-self: center;
+      }
+
+      p {
+        text-align: justify;
+      }
     }
   }
 `;

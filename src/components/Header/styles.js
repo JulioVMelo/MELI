@@ -15,6 +15,15 @@ export const Container = styled.header`
       width: 60px;
       margin-right: 50px;
     }
+
+    @media (max-width: 450px) {
+      flex-direction: column;
+      padding: 20px 0;
+
+      .logo {
+        margin-right: 0;
+      }
+    }
   }
 `;
 
