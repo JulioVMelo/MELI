@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as Ui from './styles';
@@ -9,14 +9,17 @@ import api from '../../services/api';
 export default function Header({ handleSetProducts }) {
   const [query, setQuery] = useState('');
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (query) {
-      api
-        .get(`/search?q=${query}&limit=4`)
-        .then(res => handleSetProducts(res.data.results));
-    }
-  }
+  const handleSubmit = useCallback(
+    e => {
+      e.preventDefault();
+      if (query) {
+        api
+          .get(`/search?q=${query}&limit=4`)
+          .then(res => handleSetProducts(res.data.results));
+      }
+    },
+    [handleSetProducts, query]
+  );
 
   return (
     <Ui.Container>

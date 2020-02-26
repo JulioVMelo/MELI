@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as Ui from './styles';
@@ -14,9 +14,12 @@ export default function Product({
 }) {
   const history = useHistory();
 
-  function handleProductDetail(productId) {
-    history.push(`/item/${productId}`);
-  }
+  const handleProductDetail = useCallback(
+    productId => {
+      history.push(`/item/${productId}`);
+    },
+    [history]
+  );
 
   return (
     <Ui.Product image={thumbnail} onClick={() => handleProductDetail(id)}>
@@ -37,8 +40,8 @@ export default function Product({
 
 Product.propTypes = {
   thumbnail: PropTypes.string,
-  price: PropTypes.string,
-  shipping: PropTypes.string,
+  price: PropTypes.number,
+  shipping: PropTypes.bool,
   address: PropTypes.shape({
     state_name: PropTypes.string,
   }),
@@ -47,6 +50,6 @@ Product.propTypes = {
 Product.defaultProps = {
   thumbnail: '',
   price: '',
-  shipping: '',
+  shipping: false,
   address: {},
 };

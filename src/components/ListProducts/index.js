@@ -24,16 +24,18 @@ export default function ListProducts({ products }) {
 }
 
 ListProducts.propTypes = {
-  products: PropTypes.shape({
-    thumbnail: PropTypes.string,
-    title: PropTypes.string,
-    address: PropTypes.string,
-    price: PropTypes.string,
-    shipping: PropTypes.shape({
-      free_shipping: PropTypes.string,
-    }),
-    id: PropTypes.string,
-  }),
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      thumbnail: PropTypes.string,
+      title: PropTypes.string,
+      address: PropTypes.shape({}),
+      price: PropTypes.number,
+      shipping: PropTypes.shape({
+        free_shipping: PropTypes.bool,
+      }),
+      id: PropTypes.string,
+    })
+  ),
 };
 
 ListProducts.defaultProps = {
